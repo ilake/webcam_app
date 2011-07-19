@@ -17,7 +17,7 @@ class PhotosController < ApplicationController
 
   def upload
     File.open(upload_path, 'w') do |f|
-      f.write request.raw_post
+      f.write request.raw_post.force_encoding('UTF-8')
     end
     render :text => "ok"
   end
