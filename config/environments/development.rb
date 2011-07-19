@@ -24,3 +24,7 @@ WebcamApp::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+# set the ImageMagick command path, you sould set your own path
+# you could run "which convert" to find out the path
+# ref: https://github.com/thoughtbot/paperclip
+Paperclip.options[:command_path] = "/usr/local/bin/"
